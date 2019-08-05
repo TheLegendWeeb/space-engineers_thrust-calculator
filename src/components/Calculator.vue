@@ -10,11 +10,21 @@
                 <label style="padding-left:105px;" for="large_grid_button">Large grid:</label>
                 <input type="radio" id="large_grid_button" name="grid_type" value="large_grid" v-model="Ttype">
             </p>
-            <p v-if="Ttype">Select Thruster: </p>
-            <!-- v-for="name in names_list" v-bind:key="name" -->
-            <div v-for="type in thrusters_list" v-bind:key="type">
-                <label for="thruster_select">{{type.name}}</label>
-                <input type="radio" id="thruster_select" name="thruster_type" v-bind:value=type v-model="thruster">
+            <div v-if="Ttype">
+                <p>Select Thruster: </p>
+                <!-- v-for="name in names_list" v-bind:key="name" -->
+                <div v-for="type in thrusters_list" v-bind:key="type">
+                    <label for="thruster_select">{{type.name}}</label>
+                    <input type="radio" id="thruster_select" name="thruster_type" v-bind:value=type v-model="thruster">
+                </div>
+                <br>
+                <div v-if="thruster">
+                    <p>
+                        {{thruster.name}}:<br>
+                        Thrust provided by thruster: {{thruster.thrust}}N <br>
+                        Mass of the thruster: {{thruster.mass}}kg
+                    </p>
+                </div>
             </div>
         </form>
     </div>
@@ -46,7 +56,7 @@ export default {
         }
     },
     watch:{
-        Ttype:function(val){
+        Ttype:function(){
             this.update_thruster_list()
         }
     }
