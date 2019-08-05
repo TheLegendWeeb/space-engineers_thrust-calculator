@@ -12,22 +12,22 @@
         },
         "small_hydro":{
             "name":"Small Hydrogen Thruster",
-            "mass":6969,
+            "mass":334,
             "thrust":98400
         },
         "large_hydro":{
             "name":"Large Hydrogen Thruster",
-            "mass":6969,
+            "mass":1222,
             "thrust":480000
         },
         "small_atmo":{
             "name":"Small Atmospheric Thruster",
-            "mass":6969,
+            "mass":539,
             "thrust":96000
         },
         "large_atmo":{
             "name":"Large Atmospheric Thruster",
-            "mass":6969,
+            "mass":4244,
             "thrust":576000
         }
     },
@@ -44,22 +44,22 @@
         },
         "small_hydro":{
             "name":"Small Hydrogen Thruster",
-            "mass":6969,
+            "mass":1420,
             "thrust":1080000
         },
         "large_hydro":{
             "name":"Large Hydrogen Thruster",
-            "mass":6969,
+            "mass":6940,
             "thrust":7200000
         },
         "small_atmo":{
             "name":"Small Atmospheric Thruster",
-            "mass":6969,
+            "mass":4072,
             "thrust":648000
         },
         "large_atmo":{
             "name":"Large Atmospheric Thruster",
-            "mass":6969,
+            "mass":33834,
             "thrust":6480000
         }
     }
