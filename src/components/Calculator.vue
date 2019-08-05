@@ -34,6 +34,7 @@
                 Nr. of thrusters needed: {{ceil_nr_thrust_needed}} <br>
                 Exact nr. of thrusters needed: {{exact_nr_thrust_needed}}
             </p>
+            <p style="color:red;" v-if="sim_limit_exceeded">SIMULATION COMPLEXITY EXCEEDED, ABORTING</p>
         </form>
     </div>
 </template>
@@ -54,6 +55,8 @@ export default {
             // OUTPUT
             exact_nr_thrust_needed:null,
             ceil_nr_thrust_needed:null,
+            //EXT
+            sim_limit_exceeded:false
         }
     },
     methods:{
@@ -66,6 +69,7 @@ export default {
             this.thruster=null;
         },
         onSubmit(){
+            this.sim_limit_exceeded=false;
             var force_req=this.ship_mass_no_thrusters*this.des_accel;
             var thrust_qty=force_req/this.thruster.thrust;
             var ceil_thrust_qty=Math.ceil(thrust_qty);
@@ -81,8 +85,11 @@ export default {
                 total_force_req=total_mass*this.des_accel;
                 total_thrust_qty=total_force_req/this.thruster.thrust;
                 i++;
-                if(i>10){break;
-                console.log("fuk");}
+                if(i>10){
+                    console.log("Simulation exceded 100 operations, aborting");
+                    this.sim_limit_exceeded=true;
+                    break;
+                }
             }
             this.exact_nr_thrust_needed=total_thrust_qty;
             this.ceil_nr_thrust_needed=ceil_thrust_qty;
