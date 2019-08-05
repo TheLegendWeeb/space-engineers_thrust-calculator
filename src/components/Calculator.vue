@@ -93,6 +93,10 @@ export default {
             }
             this.exact_nr_thrust_needed=total_thrust_qty;
             this.ceil_nr_thrust_needed=ceil_thrust_qty;
+            if(this.sim_limit_exceeded){
+                this.exact_nr_thrust_needed="ERR";
+                this.ceil_nr_thrust_needed="ERR";
+            }
         }
     },
     watch:{
