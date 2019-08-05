@@ -1,8 +1,8 @@
 <template>
     <div>
         <form @submit.prevent="onSubmit">
-            <p>Desired acceleration:&emsp;&emsp;&emsp;<input v-model="des_accel">m/s   <span style="color:red" v-if="isNaN(des_accel)">&emsp; Only numbers are allowed.</span> </p>
-            <p>Ship mass (no thrusters):&emsp;&nbsp;<input v-model="ship_mass_no_thrusters">kg <span style="color:red" v-if="isNaN(ship_mass_no_thrusters)">&emsp; Only numbers are allowed.</span>  </p>
+            <p>Desired acceleration:&emsp;&emsp;&emsp;<input v-model="des_accel"> m/s^2   <span style="color:red" v-if="isNaN(des_accel)">&emsp; Only numbers are allowed.</span> </p>
+            <p>Ship mass (no thrusters):&emsp;&nbsp;<input v-model="ship_mass_no_thrusters"> kg <span style="color:red" v-if="isNaN(ship_mass_no_thrusters)">&emsp; Only numbers are allowed.</span>  </p>
             <p>Select Grid: &emsp;
                 <label for="small_grid_button">Small grid: </label>
                 <input type="radio" id="small_grid_button" name="grid_type" value="small_grid" v-model="Ttype">
@@ -34,7 +34,7 @@
                 Nr. of thrusters needed: {{ceil_nr_thrust_needed}} <br>
                 Exact nr. of thrusters needed: {{exact_nr_thrust_needed}}
             </p>
-            <p style="color:red;" v-if="sim_limit_exceeded">SIMULATION COMPLEXITY EXCEEDED, ABORTING</p>
+            <p style="color:red;" v-if="sim_limit_exceeded">SIMULATION COMPLEXITY EXCEEDED, ABORTING OPERATION</p>
         </form>
     </div>
 </template>

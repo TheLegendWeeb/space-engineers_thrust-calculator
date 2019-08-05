@@ -1,12 +1,12 @@
 {
     "small_grid":{
         "small_ion":{
-            "name":"sSmall Ion Thruster",
+            "name":"Small Ion Thruster",
             "mass":113,
             "thrust":14400
         },
         "large_ion":{
-            "name":"sLarge Ion Thruster",
+            "name":"Large Ion Thruster",
             "mass":721,
             "thrust":172800
         },
@@ -33,12 +33,12 @@
     },
     "large_grid":{
         "small_ion":{
-            "name":"vSmall Ion Thruster",
+            "name":"Small Ion Thruster",
             "mass":4380,
             "thrust":345600
         },
         "large_ion":{
-            "name":"vLarge Ion Thruster",
+            "name":"Large Ion Thruster",
             "mass":43200,
             "thrust":4320000
         },
