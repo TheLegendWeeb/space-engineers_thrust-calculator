@@ -1,6 +1,6 @@
 <template>
     <div>
-        <form @submit.prevent>
+        <form @submit.prevent="onSubmit">
             <p>Desired acceleration:&emsp;&emsp;&emsp;<input v-model="des_accel">m/s   <span style="color:red" v-if="isNaN(des_accel)">&emsp; Only numbers are allowed.</span> </p>
             <p>Ship mass (no thrusters):&emsp;&nbsp;<input v-model="ship_mass_no_thrusters">kg <span style="color:red" v-if="isNaN(ship_mass_no_thrusters)">&emsp; Only numbers are allowed.</span>  </p>
             <p>Select Grid: &emsp;
@@ -24,8 +24,16 @@
                         Thrust provided by thruster: {{thruster.thrust}}N <br>
                         Mass of the thruster: {{thruster.mass}}kg
                     </p>
+                    <br>
+                    <!-- <input type="submit" value="Submit"> -->
                 </div>
             </div>
+            <input type="submit" value="Calculate">
+            <!-- <input v-if="thruster" type="submit" value="Calculate"> -->
+            <p>
+                Nr. of thrusters needed: {{ceil_nr_thrust_needed}} <br>
+                Exact nr. of thrusters needed: {{exact_nr_thrust_needed}}
+            </p>
         </form>
     </div>
 </template>
@@ -42,7 +50,10 @@ export default {
             Ttype:null,
             thruster_values: thruster_values_json,
             thrusters_list:[],
-            thruster:null
+            thruster:null,
+            // OUTPUT
+            exact_nr_thrust_needed:null,
+            ceil_nr_thrust_needed:null,
         }
     },
     methods:{
@@ -53,6 +64,28 @@ export default {
             }
             this.thrusters_list=thrusters;
             this.thruster=null;
+        },
+        onSubmit(){
+            var force_req=this.ship_mass_no_thrusters*this.des_accel;
+            var thrust_qty=force_req/this.thruster.thrust;
+            var ceil_thrust_qty=Math.ceil(thrust_qty);
+            
+            var total_mass=parseFloat(this.ship_mass_no_thrusters)+parseFloat((this.thruster.mass*ceil_thrust_qty));
+            var total_force_req=total_mass*this.des_accel;
+            var total_thrust_qty=total_force_req/this.thruster.thrust;
+            var i=0;
+            while(total_thrust_qty>ceil_thrust_qty){
+                ceil_thrust_qty++;
+                //add efect here ;)
+                total_mass=parseFloat(this.ship_mass_no_thrusters)+parseFloat((this.thruster.mass*ceil_thrust_qty));
+                total_force_req=total_mass*this.des_accel;
+                total_thrust_qty=total_force_req/this.thruster.thrust;
+                i++;
+                if(i>10){break;
+                console.log("fuk");}
+            }
+            this.exact_nr_thrust_needed=total_thrust_qty;
+            this.ceil_nr_thrust_needed=ceil_thrust_qty;
         }
     },
     watch:{

@@ -2,12 +2,12 @@
     "small_grid":{
         "small_ion":{
             "name":"sSmall Ion Thruster",
-            "mass":6969,
+            "mass":113,
             "thrust":14400
         },
         "large_ion":{
             "name":"sLarge Ion Thruster",
-            "mass":6969,
+            "mass":721,
             "thrust":172800
         },
         "small_hydro":{
@@ -34,12 +34,12 @@
     "large_grid":{
         "small_ion":{
             "name":"vSmall Ion Thruster",
-            "mass":6969,
+            "mass":4380,
             "thrust":345600
         },
         "large_ion":{
             "name":"vLarge Ion Thruster",
-            "mass":6969,
+            "mass":43200,
             "thrust":4320000
         },
         "small_hydro":{
