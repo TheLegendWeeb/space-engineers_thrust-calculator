@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p>Desired acceleration:&emsp;&emsp;&emsp;<input v-model="des_accel">   <span style="color:red" v-if="isNaN(des_accel)">&emsp; GET THE FUCK OUT</span> </p>
+        <p>Desired acceleration:&emsp;&emsp;&emsp;<input v-model="des_accel">m/s   <span style="color:red" v-if="isNaN(des_accel)">&emsp; Only numbers are allowed.</span> </p>
     </div>
 </template>
 
@@ -14,3 +14,6 @@ export default {
     }
 }
 </script>
+<style>
+
+</style>
