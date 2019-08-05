@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Calculator boe="NR1"/>
+    <Calculator/>
   </div>
 </template>
 

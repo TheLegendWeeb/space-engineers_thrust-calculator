@@ -1,0 +1,66 @@
+{
+    "small_grid":{
+        "small_ion":{
+            "name":"sSmall Ion Thruster",
+            "mass":6969,
+            "thrust":14400
+        },
+        "large_ion":{
+            "name":"sLarge Ion Thruster",
+            "mass":6969,
+            "thrust":172800
+        },
+        "small_hydro":{
+            "name":"Small Hydrogen Thruster",
+            "mass":6969,
+            "thrust":98400
+        },
+        "large_hydro":{
+            "name":"Large Hydrogen Thruster",
+            "mass":6969,
+            "thrust":480000
+        },
+        "small_atmo":{
+            "name":"Small Atmospheric Thruster",
+            "mass":6969,
+            "thrust":96000
+        },
+        "large_atmo":{
+            "name":"Large Atmospheric Thruster",
+            "mass":6969,
+            "thrust":576000
+        }
+    },
+    "large_grid":{
+        "small_ion":{
+            "name":"vSmall Ion Thruster",
+            "mass":6969,
+            "thrust":345600
+        },
+        "large_ion":{
+            "name":"vLarge Ion Thruster",
+            "mass":6969,
+            "thrust":4320000
+        },
+        "small_hydro":{
+            "name":"Small Hydrogen Thruster",
+            "mass":6969,
+            "thrust":1080000
+        },
+        "large_hydro":{
+            "name":"Large Hydrogen Thruster",
+            "mass":6969,
+            "thrust":7200000
+        },
+        "small_atmo":{
+            "name":"Small Atmospheric Thruster",
+            "mass":6969,
+            "thrust":648000
+        },
+        "large_atmo":{
+            "name":"Large Atmospheric Thruster",
+            "mass":6969,
+            "thrust":6480000
+        }
+    }
+}
