@@ -84,7 +84,8 @@ export default {
                 total_req_force=total_mass*this.desired_acceleration;
                 total_thruster_qty=total_req_force/this.selected_thruster.thrust;
                 sim_loop++;
-                if(sim_loop>100){
+                console.log(sim_loop);
+                if(sim_loop>3000){
                     console.log("Simulation exceded 100 operations, aborting");
                     this.sim_limit_exceeded=true;
                     break;
