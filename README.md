@@ -1,29 +1,5 @@
-# space-engineers_thrust-calculator_refactor
+# Space engineers thrust calculator
 
-## Project setup
-```
-npm install
-```
+Self explanatory
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## [GH Pages](https://thelegendweeb.github.io/space-engineers_thrust_calculator/)
