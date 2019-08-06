@@ -1,8 +1,8 @@
 <template>
     <div class="Thruster_calc_section">
         <form @submit.prevent="onSubmit">
-            <p>Desired acceleration: <input v-model="desired_acceleration"> m/s^2</p>
-            <p>The mass of the ship without thrusters: <input v-model="ship_mass_without_thrusters"> kg <span style="color:red;" v-if="isNaN(ship_mass_without_thrusters)">The mass can only be a number.</p>
+            <p>Desired acceleration: <input v-model="desired_acceleration"> m/s^2 <span style="color:red;" v-if="isNaN(desired_acceleration)">The speed can only be a number. </span></p>
+            <p>The mass of the ship without thrusters: <input v-model="ship_mass_without_thrusters"> kg <span style="color:red;" v-if="isNaN(ship_mass_without_thrusters)">The mass can only be a number.</span></p>
             <p>Select the grid type:
                 <label for="small_grid_button">Small grid: </label>
                 <input type="radio" id="small_grid_button" value="small_grid" v-model="thruster_class">
@@ -98,7 +98,7 @@ export default {
     },
     computed:{
         ceiled_number_of_thrusters_needed(){
-            return Math.ceil(number_of_thrusters_needed);
+            return Math.ceil(this.number_of_thrusters_needed);
         }
     },
     watch:{
