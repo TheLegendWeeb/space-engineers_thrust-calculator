@@ -2,4 +2,4 @@
 
 Self explanatory
 
-## [GH Pages](https://thelegendweeb.github.io/space-engineers_thrust_calculator/)
+## [GH Pages](https://thelegendweeb.github.io/space-engineers_thrust-calculator/)
